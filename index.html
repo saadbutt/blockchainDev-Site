@@ -1,58 +1,366 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Jowe Boy&apos;s Website</title>
-		<link href="style.css" rel="stylesheet" type="text/css">
-	</head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saad Rasool Butt - Blockchain Developer in Dubai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	<body>
-		<header>
-			<div class="row">
-				<div class="logo">
-					<img src="assets/logo-new.png" alt="oe_logo">
-				</div>
-				<ul class="main-nav">
-					<li class="active"><a href="">HOME</a></li>
-					<li><a href="">SERVICES</a></li>
-					<li><a href="">ABOUT</a></li>
-					<li><a href="">BLOG</a></li>
-					<li><a href="">CONTACT</a></li>
-					<li><a href="">FAQ</a></li>
-				</ul>
-			</div>
-			<div class="hero">
-				<h1>Ready for Action?</h1>
-				<div class="button">
-					<a href="" class="btn btn-one">Watch Video</a>
-					<a href="" class="btn btn-two">Explore More</a>
-				</div>
-			</div>
-		</header>
-		<section class="service grid-container">
-		</section>
-		<section class="about grid-container">
-		</section>
-		<section class="blog grid-container">
-		</section>
-		<section class="contact grid-container">
-			<div class="contact-form grid-item">
-				<div class="contact-section-header">
-					<h2>Get in touch with us!</h2>
-				</div>
-				<form class="form">
-					<input type="text" name="fullname" placeholder="Fullname">
-					<input type="email" name="email" placeholder="Email Address">
-					<input type="number" name="phonenumber" placeholder="Phone Number">
-					<textarea class="subject" name="subject" placeholder="Your subject here..."></textarea>
-					<input class="button" type="submit" value="Submit">
-				</form>
-			</div>
-			<div class="contact-form grid-item">
-			</div>
-		</section>
-		<section class="faq grid-container">
-		</section>
-	</body>
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
 
+        header .logo h1 {
+            margin: 0;
+            font-size: 36px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header .main-nav {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        header .main-nav li {
+            margin: 0 15px;
+        }
+
+        header .main-nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        header .main-nav a:hover {
+            color: #ffeb3b;
+        }
+
+        .hero {
+            padding: 100px 20px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin: 0;
+            animation: slideInDown 2s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin: 20px 0;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: #ffeb3b;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            margin: 10px;
+            display: inline-block;
+            transition: background 0.3s;
+            animation: fadeInUp 2.5s ease-in-out;
+        }
+
+        .btn:hover {
+            background: #ffc107;
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .about,
+        .skills,
+        .contact {
+            background: #f7f7f7;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: center;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .experience-item {
+            margin-bottom: 40px;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        .experience-item h3 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .experience-item p {
+            margin: 10px 0 20px;
+            color: #777;
+        }
+
+        .experience-item ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .experience-item ul li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .skills ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .skills ul li {
+            margin: 10px 20px;
+            padding: 10px 20px;
+            background: #333;
+            color: white;
+            border-radius: 5px;
+            font-weight: 500;
+            font-size: 16px;
+            animation: fadeInUp 2.5s ease-in-out;
+        }
+
+        .contact ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        .contact ul li {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .contact ul li a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .contact ul li a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Saad Rasool Butt</h1>
+            </div>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Blockchain Developer in Dubai</h2>
+            <p>Building decentralized applications and smart contracts on various blockchain platforms.</p>
+            <a href="https://www.linkedin.com/in/saad-rasool-butt-138ab8b5/" target="_blank" class="btn">Visit My LinkedIn</a>
+            <a href="mailto:saad.volxom@gmail.com" >saad.volxom@gmail.com> </a>
+
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am Saad Rasool Butt, a Senior Backend Engineer and Blockchain Developer with extensive experience in building decentralized applications, smart contracts, and integrating blockchain technology into various projects. Currently based in Dubai, I am passionate about the potential of blockchain technology to revolutionize industries.</p>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="experience-item">
+                <h3>Senior Software Engineer - VMarketing, DIFC Dubai, UAE</h3>
+                <p>AUGUST 2023 - PRESENT</p>
+                <ul>
+                    <li>Developed the “NFT22” platform on Polygon Blockchain.</li>
+                    <li>Implemented backend APIs in Golang and integrated them with the frontend.</li>
+                    <li>Collaborated with Booster Block and Fingenious Teams for platform integration.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Senior Blockchain Consultant - Systems Limited, Islamabad, Pakistan</h3>
+                <p>MAY 2023 - SEPTEMBER 2023</p>
+                <ul>
+                    <li>Developed an Ethereum Private Blockchain using POA consensus for Saudi Ministry of Tourism.</li>
+                    <li>Deployed smart contracts to the newly created private Blockchain.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Senior Software Developer - Scorpbit Technologies, Islamabad, Pakistan</h3>
+                <p>JANUARY 2022 - MAY 2023</p>
+                <ul>
+                    <li>Worked on the Metaverse Game Legends of Bezogia.</li>
+                    <li>Developed ZogiToken and associated smart contracts on multiple blockchains.</li>
+                </ul>
+            </div>
+            <!-- Add more experience items as needed -->
+        </div>
+        <div class="container">
+            <h3>Previously Developed Projects</h3>
+    
+            <ul class="project-list">
+                <li>
+                    <p class="experience-item"> <h3> Decentralized social media platform: </h3> </p>
+                    <a href="https://floyx.com/" target="_blank">Floyx</a>
+                </li>
+                <li>
+                    <p class="experience-item"> <h3> MMORPG game: </h3> </p>
+                    <a href="https://www.zogilabs.io/" target="_blank">Zogi Labs</a>
+                </li>
+                <li>
+                    <p class="experience-item"> <h3> Burn to earn platform: </h3> </p>
+                    <a href="https://www.fitcoin.co/" target="_blank">FitCoin</a>
+                </li>
+                <li>
+                    <p class="experience-item"> <h3> Decentralized on-chain order-book DEX: </h3> </p>
+                    <a href="https://www.multipool.finance/" target="_blank">Multipool Finance</a>
+                </li>
+            </ul>
+            </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Core Skills</h2>
+            <ul>
+                <li>Blockchain</li>
+                <li>Web3.0</li>
+                <li>Ethereum</li>
+                <li>Cadence (Flow Blockchain)</li>
+                <li>Golang</li>
+                <li>Node Js</li>
+                <li>DApp</li>
+                <li>SQL</li>
+                <li>Solidity</li>
+                <li>Hyperledger</li>
+                <!-- Add more skills as needed -->
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>If you want to get in touch, feel free to reach out to me via email or phone.</p>
+            <ul>
+                <li>Email: <a href="mailto:saad.volxom@gmail.com">saad.volxom@gmail.com</a></li>
+                <li>Phone: +971 50 8438698</li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/saad-rasool-butt-138ab8b5/" target="_blank">Saad Rasool Butt</a></li>
+                <li>GitHub: <a href="https://github.io/saadbutt" target="_blank">saadbutt</a></li>
+                <li>Upwork: <a href="https://www.upwork.com/freelancers/~018ff43e3df3f94993" target="_blank">Saad on Upwork</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Saad Rasool Butt. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
 </html>
